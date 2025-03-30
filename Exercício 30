@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+void gerarParenteses(char *str, int pos, int n, int open, int close) {
+    if (close == n) {
+        printf("%s\n", str);
+        return;
+    }
+    if (open < n) {
+        str[pos] = '(';
+        gerarParenteses(str, pos + 1, n, open + 1, close);
+    }
+    if (close < open) {
+        str[pos] = ')';
+        gerarParenteses(str, pos + 1, n, open, close + 1);
+    }
+}
+
+int main() {
+    int n = 3;
+    char str[2 * n + 1];
+    str[2 * n] = '\0';
+    gerarParenteses(str, 0, n, 0, 0);
+    return 0;
+}
