@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+void imprimirPares(int n) {
+    if (n < 0) return;
+    if (n % 2 == 0) printf("%d ", n);
+    imprimirPares(n - 2);
+}
+
+int main() {
+    int n = 6;
+    imprimirPares(n);
+    printf("\n");
+    return 0;
+}
