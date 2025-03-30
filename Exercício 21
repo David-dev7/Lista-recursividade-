@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+void combina(int arr[], int n, int k, int i, int res[], int index) {
+    if (index == k) {
+        for (int j = 0; j < k; j++) {
+            printf("%d ", res[j]);
+        }
+        printf("\n");
+        return;
+    }
+    if (i >= n) return;
+    res[index] = arr[i];
+    combina(arr, n, k, i + 1, res, index + 1);
+    combina(arr, n, k, i + 1, res, index);
+}
+
+int main() {
+    int arr[] = {1, 2, 3};
+    int k = 2;
+    int res[k];
+    combina(arr, 3, k, 0, res, 0);
+    return 0;
+}
