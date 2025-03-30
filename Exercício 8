@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <string.h>
+
+int verificaPalindromo(char str[], int inicio, int fim) {
+    if (inicio >= fim) return 1;
+    if (str[inicio] != str[fim]) return 0;
+    return verificaPalindromo(str, inicio + 1, fim - 1);
+}
+
+int main() {
+    char str[] = "arara";
+    int len = strlen(str);
+    if (verificaPalindromo(str, 0, len - 1)) {
+        printf("É um palíndromo\n");
+    } else {
+        printf("Não é um palíndromo\n");
+    }
+    return 0;
+}
