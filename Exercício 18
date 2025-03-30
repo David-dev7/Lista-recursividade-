@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+int comprimentoString(char str[], int index) {
+    if (str[index] == '\0') return 0;
+    return 1 + comprimentoString(str, index + 1);
+}
+
+int main() {
+    char str[] = "recursivo";
+    printf("Comprimento da string: %d\n", comprimentoString(str, 0));
+    return 0;
+}
