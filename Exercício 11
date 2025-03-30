@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+int contarCaracteres(char str[], char c, int index) {
+    if (str[index] == '\0') return 0;
+    return (str[index] == c) + contarCaracteres(str, c, index + 1);
+}
+
+int main() {
+    char str[] = "abracadabra";
+    char c = 'a';
+    printf("O caractere '%c' aparece %d vezes\n", c, contarCaracteres(str, c, 0));
+    return 0;
+}
