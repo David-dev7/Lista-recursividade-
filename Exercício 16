@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+void imprimirImpares(int n) {
+    if (n < 1) return;
+    if (n % 2 != 0) printf("%d ", n);
+    imprimirImpares(n - 2);
+}
+
+int main() {
+    int n = 7;
+    imprimirImpares(n);
+    printf("\n");
+    return 0;
+}
