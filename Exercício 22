@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <math.h>
+
+int numeroArmstrong(int n) {
+    int temp = n, soma = 0, digitos = 0;
+    while (temp != 0) {
+        digitos++;
+        temp /= 10;
+    }
+    temp = n;
+    while (temp != 0) {
+        soma += pow(temp % 10, digitos);
+        temp /= 10;
+    }
+    return soma == n;
+}
+
+int main() {
+    int n = 153;
+    if (numeroArmstrong(n)) {
+        printf("%d é um número de Armstrong\n", n);
+    } else {
+        printf("%d não é um número de Armstrong\n", n);
+    }
+    return 0;
+}
